@@ -89,7 +89,8 @@ const OrderInvoice = () => {
       handleErrorNotification(err, "handleEmailInvoice");
     }
   };
-
+  console.log("Global setting: ", globalSetting);
+  
   return (
     <>
       <PageTitle> {t("InvoicePageTittle")} </PageTitle>
@@ -120,11 +121,11 @@ const OrderInvoice = () => {
                   )}
                 </h2>
                 <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
-                  {globalSetting?.address} <br />
-                  {globalSetting?.contact} <br />{" "}
+                  <span>Ocentury</span> <br />
                   <span> {globalSetting?.email} </span> <br />
-                  {/* {globalSetting?.website} */}
-                  <span>ocentury.in</span>
+                  {globalSetting?.contact} <br />{" "}
+                  {globalSetting?.address} <br />
+                  {globalSetting?.post_code}
                 </p>
               </div>
             </div>
@@ -151,14 +152,12 @@ const OrderInvoice = () => {
                 </span>
                 <span className="text-sm text-gray-500 dark:text-gray-400 block">
                   {data?.user_info?.name} <br />
-                  {data?.user_info?.email}{" "}
+                  {data?.user_info?.email}{" "} <br />
                   <span className="ml-2">{data?.user_info?.contact}</span>
                   <br />
-                  {data?.user_info?.address?.substring(0, 30)}
-                  <br />
-                  {data?.user_info?.city}, {data?.user_info?.country},{" "}
-                  {data?.user_info?.zipCode},
-                  {data?.user_info?.state}
+                  {data?.user_info?.address?.substring(0, 30)}{" "}
+                  {data?.user_info?.city},{" "} {data?.user_info?.state},{" "} {data?.user_info?.country},{" "}
+                   <br />{data?.user_info?.zipCode}
                 </span>
               </div>
             </div>
