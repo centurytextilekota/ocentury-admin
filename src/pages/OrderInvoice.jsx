@@ -138,7 +138,38 @@ const OrderInvoice = () => {
                   {t("InvoiceTo")}
                 </span> */}
                 <PageTitle> {t("InvoicePageTittle")} </PageTitle>
+                <div className="flex flex-row flex-wrap justify-between gap-4 pt-4">
+                  {/* Invoice Date */}
+                  <div className="flex flex-col">
+                    <span className="font-bold font-serif text-sm uppercase text-gray-600 dark:text-gray-500">
+                      {t("InvoiceDate")}
+                    </span>
+                    <span className="text-sm text-gray-500 dark:text-gray-400">
+                      {showDateFormat(data?.createdAt)}
+                    </span>
+                  </div>
 
+                  {/* Invoice Status */}
+                  <div className="flex flex-col">
+                    <span className="font-bold font-serif text-sm uppercase text-gray-600 dark:text-gray-500">
+                      {t("InvoiceStatus")}
+                    </span>
+                    <span className="text-xs mt-1 text-gray-500 flex items-center">
+                      <Status status={data.status} />
+                    </span>
+                  </div>
+
+                  {/* Invoice Number */}
+                  <div className="flex flex-col">
+                    <span className="font-bold font-serif text-sm uppercase text-gray-600 dark:text-gray-500">
+                      {t("InvoiceNo")}
+                    </span>
+                    <span className="text-sm text-gray-500 dark:text-gray-400">
+                      #{data?.invoice}
+                    </span>
+                  </div>
+                </div>
+                <div className="mt-2 font-bold font-serif text-sm uppercase">Ship To</div>
                 <span className="text-sm text-gray-500 block">
                   {data?.user_info?.name} <br />
                   {data?.user_info?.address}
@@ -157,34 +188,6 @@ const OrderInvoice = () => {
                     {data?.user_info?.contact}
                   </span>
                   <br />
-                </span>
-              </div>
-            </div>
-            <div className="flex lg:flex-row md:flex-row flex-col justify-between pt-4">
-              <div className="mb-3 md:mb-0 lg:mb-0 flex flex-col">
-                <span className="font-bold font-serif text-sm uppercase text-gray-600 dark:text-gray-500 block">
-                  {t("InvoiceDate")}
-                </span>
-                <span className="text-sm text-gray-500 dark:text-gray-400 block">
-                  {showDateFormat(data?.createdAt)}
-                </span>
-              </div>
-              <span className="text-sm font-bold font-serif text-gray-600 dark:text-gray-400 block uppercase">
-                Invoice Status
-                <p className="text-xs mt-1 text-gray-500">
-                  {/* {t("InvoiceStatus")} */}
-                  <span className="pl-2 font-medium text-xs capitalize">
-                    {" "}
-                    <Status status={data.status} />
-                  </span>
-                </p>
-              </span>
-              <div className="mb-3 md:mb-0 lg:mb-0 flex flex-col">
-                <span className="font-bold font-serif text-sm uppercase text-gray-600 dark:text-gray-500 block">
-                  {t("InvoiceNo")}
-                </span>
-                <span className="text-sm text-gray-500 dark:text-gray-400 block">
-                  #{data?.invoice}
                 </span>
               </div>
             </div>
