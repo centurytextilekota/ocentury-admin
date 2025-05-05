@@ -133,7 +133,7 @@ const OrderInvoice = () => {
                   </>
                 </div>
               </div>
-              <div className="flex flex-col lg:text-right text-left">
+              <div className="flex flex-col ">
                 {/* <span className="font-bold font-serif text-sm uppercase text-gray-600 dark:text-gray-500 block">
                   {t("InvoiceTo")}
                 </span> */}
@@ -154,7 +154,7 @@ const OrderInvoice = () => {
                     <span className="font-bold items-center font-serif text-sm uppercase text-gray-600 dark:text-gray-500">
                       {t("InvoiceStatus")}
                     </span>
-                    <span className="text-xs mt-1 text-gray-500 flex items-center">
+                    <span className="text-xs mt-1 text-gray-500 flex ">
                       <Status status={data.status} />
                     </span>
                   </div>
