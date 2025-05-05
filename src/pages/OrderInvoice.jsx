@@ -24,7 +24,7 @@ import OrderServices from "@/services/OrderServices";
 import Invoice from "@/components/invoice/Invoice";
 import Loading from "@/components/preloader/Loading";
 import logoDark from "@/assets/img/logo/logo-dark.svg";
-import logoLight from "@/assets/img/logo/logo-color.svg";
+import logoLight from "@/assets/img/logo/lg.png";
 import PageTitle from "@/components/Typography/PageTitle";
 import spinnerLoadingImage from "@/assets/img/spinner.gif";
 import useUtilsFunction from "@/hooks/useUtilsFunction";
@@ -114,19 +114,26 @@ const OrderInvoice = () => {
               </h1>
               <div className="lg:text-right text-left">
                 <h2 className="lg:flex lg:justify-end text-lg font-serif font-semibold mt-4 lg:mt-0 lg:ml-0 md:mt-0">
-                  {mode === "dark" ? (
+                  {/* {mode === "dark" ? (
                     <img src={logoDark} alt="kachabazar" width="110" />
-                  ) : (
-                    <img src={logoLight} alt="kachabazar" width="110" />
-                  )}
+                  ) : ( */}
+                  <img src={logoLight} alt="ocentury" width="110" />
+                  {/* )} */}
                 </h2>
-                <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
-                  <span>Ocentury</span> <br />
-                  <span> {globalSetting?.email} </span> <br />
-                  {globalSetting?.contact} <br />{" "}
-                  {globalSetting?.address} <br />
-                  {globalSetting?.post_code}
-                </p>
+                <div className="text-sm  text-gray-500">
+                  <>{globalSetting?.company_name}</>
+                  <p className="whitespace-pre-wrap lg:text-right break-words  lg:max-w-56 ml-auto">
+                    {globalSetting?.address}
+                    {globalSetting?.post_code}
+                  </p>
+                  <span></span>
+                  <>Email: {globalSetting?.email}</>
+                  <br />
+                  <>Phone:{globalSetting?.contact}</>
+                  <>
+                    {globalSetting?.city} {globalSetting?.state}
+                  </>
+                </div>
               </div>
             </div>
             <div className="flex lg:flex-row md:flex-row flex-col justify-between pt-4">
@@ -150,14 +157,24 @@ const OrderInvoice = () => {
                 <span className="font-bold font-serif text-sm uppercase text-gray-600 dark:text-gray-500 block">
                   {t("InvoiceTo")}
                 </span>
-                <span className="text-sm text-gray-500 dark:text-gray-400 block">
+                <span className="text-sm text-gray-500 block">
                   {data?.user_info?.name} <br />
-                  {data?.user_info?.email}{" "} <br />
-                  <span className="ml-2">{data?.user_info?.contact}</span>
+                  {data?.user_info?.address}
                   <br />
-                  {data?.user_info?.address?.substring(0, 30)}{" "}
-                  {data?.user_info?.city},{" "} {data?.user_info?.state},{" "} {data?.user_info?.country},{" "}
-                   <br />{data?.user_info?.zipCode}
+                  {data.user_info?.city}, {data.user_info?.state},{" "}
+                  {data.user_info?.country}. {data.user_info?.zipCode}
+                  <br />
+                  <strong>Landmark: </strong>
+                  {data.user_info?.landmark}
+                  {/* {console.log("user info", data.user_info)} */}
+                  <br />
+                  <strong>Email:</strong> {data?.user_info?.email}
+                  <br />
+                  <span className="">
+                    <strong>Phone:</strong>
+                    {data?.user_info?.contact}
+                  </span>
+                  <br />
                 </span>
               </div>
             </div>
@@ -181,10 +198,8 @@ const OrderInvoice = () => {
                     <TableCell className="text-center">
                       {t("ItemPrice")}
                     </TableCell>
-                    <TableCell className="text-center">
-                      {("GST")}
-                    </TableCell>
-                    <TableCell className="text-right">{("Amount")}</TableCell>
+                    <TableCell className="text-center">{"GST"}</TableCell>
+                    <TableCell className="text-right">{"Amount"}</TableCell>
                   </tr>
                 </TableHeader>
                 <Invoice
