@@ -47,7 +47,7 @@ const OrderInvoice = () => {
   const { handleErrorNotification } = useError();
   const { handleDisableForDemo } = useDisableForDemo();
 
-  console.log("Data: ", data);
+  // console.log("Data: ", data);
 
   const { currency, globalSetting, showDateFormat, getNumberTwo } =
     useUtilsFunction();
@@ -89,7 +89,7 @@ const OrderInvoice = () => {
       handleErrorNotification(err, "handleEmailInvoice");
     }
   };
-  console.log("Global setting: ", globalSetting);
+  // console.log("Global setting: ", globalSetting);
 
   return (
     <>
