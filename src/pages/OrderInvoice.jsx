@@ -179,16 +179,24 @@ const OrderInvoice = () => {
                   {data.user_info?.city}, {data.user_info?.state},{" "}
                   {data.user_info?.country}. {data.user_info?.zipCode}
                   <br />
-                  <strong>Landmark: </strong>
-                  {data.user_info?.landmark}
-                  {/* {console.log("user info", data.user_info)} */}
-                  <br />
-                  <strong>Email:</strong> {data?.user_info?.email}
-                  <br />
-                  <span className="">
-                    <strong>Phone:</strong>
-                    {data?.user_info?.contact}
-                  </span>
+                  {data?.user_info?.landmark && (
+                    <>
+                      <strong>Landmark: </strong>
+                      {data.user_info.landmark}
+                      <br />
+                    </>
+                  )}
+                  {data?.user_info?.email && (
+                    <>
+                      <strong>Email:</strong> {data.user_info.email}
+                      <br />
+                    </>
+                  )}
+                  {data?.user_info?.contact && (
+                    <span>
+                      <strong>Phone:</strong> {data.user_info.contact}
+                    </span>
+                  )}
                   <br />
                 </span>
               </div>
