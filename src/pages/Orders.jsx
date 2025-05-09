@@ -160,6 +160,12 @@ const Orders = () => {
                       {t("PageOrderProcessing")}
                     </option>
                     <option value="Cancel">{t("OrderCancel")}</option>
+                    {/* <option value="ReturnRequested">Return Reqested</option>
+                    <option value="ReturnRejected">Return Rejected</option> */}
+                    {/* <option value="OnReturn">On Return</option> */}
+                    {/* <option value="ReturnCancelledByUser">
+                      Return Cancelled By User
+                    </option> */}
                   </Select>
                 </div>
 
