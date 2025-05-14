@@ -44,27 +44,25 @@ const SelectStatus = ({ id, order }) => {
           Cancel
         </option>
 
-
-
-        {/* <option
+        <option
           defaultValue={order?.status === "ReturnRequested"}
           value="ReturnRequested"
         >
           Return Requested
         </option>
+        {/* <option defaultValue={order?.status === "OnReturn"} value="OnReturn">
+            On Return
+            </option> */}
+        <option defaultValue={order?.status === "Returned"} value="Returned">
+          Return Completed
+        </option>
         <option
           defaultValue={order?.status === "ReturnRejected"}
           value="ReturnRejected"
-          >
-          Reject Return
+        >
+          Return Rejected
         </option>
- */}
 
-
-
-          {/* <option defaultValue={order?.status === "OnReturn"} value="OnReturn">
-            On Return
-          </option> */}
         {/* <option
           defaultValue={order?.status === "ReturnCancelledByUser"}
           value="ReturnCancelledByUser"
