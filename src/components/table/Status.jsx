@@ -18,6 +18,11 @@ const Status = ({ status }) => {
         {status === `POS-Completed` && (
           <Badge className="dark:bg-teal-900 bg-teal-100">{status}</Badge>
         )}
+        {status === `ReturnRequested` && (
+          <Badge className="dark:bg-teal-900 bg-teal-100">{status}</Badge>
+        )}
+        {status === `Returned` && <Badge type="success">{status}</Badge>}
+        {status === `ReturnRejected` && <Badge type="danger">{status}</Badge>}
       </span>
     </>
   );
