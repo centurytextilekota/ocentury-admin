@@ -40,6 +40,12 @@ const SelectStatus = ({ id, order }) => {
         >
           Processing
         </option>
+        <option
+          defaultValue={order?.status === "Shipped"}
+          value="Shipped"
+        >
+          Shipped
+        </option>
         <option defaultValue={order?.status === "Cancel"} value="Cancel">
           Cancel
         </option>

@@ -156,6 +156,7 @@ const Orders = () => {
                     </option>
                     <option value="Delivered">{t("PageOrderDelivered")}</option>
                     <option value="Pending">{t("PageOrderPending")}</option>
+                    <option value="Shipped">{"Shipped"}</option>
                     <option value="Processing">
                       {t("PageOrderProcessing")}
                     </option>
