@@ -43,6 +43,9 @@ const Orders = () => {
     currentPage,
     searchText,
     searchRef,
+    invoiceRef,
+    invoice,
+    setInvoice,
     method,
     setMethod,
     setStartDate,
@@ -66,6 +69,7 @@ const Orders = () => {
       startDate: startDate,
       limit: resultsPerPage,
       customerName: searchText,
+      invoice: invoice,
     })
   );
 
@@ -128,6 +132,7 @@ const Orders = () => {
     setStartDate("");
     setSearchText("");
     searchRef.current.value = "";
+    setInvoice(null)
   };
   // console.log("data in orders page", data);
 
@@ -146,6 +151,14 @@ const Orders = () => {
                     type="search"
                     name="search"
                     placeholder="Search by Customer Name"
+                  />
+                </div>
+                <div>
+                  <Input
+                    ref={invoiceRef}
+                    type="number"
+                    name="InvoiceSearch"
+                    placeholder="Search Invoice No"
                   />
                 </div>
 

@@ -96,6 +96,7 @@ export const SidebarProvider = ({ children }) => {
     e.preventDefault();
     setSearchText(searchRef?.current?.value || null);
     setSearchSku(skuRef?.current?.value || null);
+    setInvoice(invoiceRef?.current?.value || null);
     setCurrentPage(1); 
   };
   // console.log("globalSetting", globalSetting, "languages", languages);
@@ -212,6 +213,8 @@ export const SidebarProvider = ({ children }) => {
         skuRef,
         searchSku,
         setSearchSku,
+        invoice,
+        setInvoice,
       }}
     >
       {children}

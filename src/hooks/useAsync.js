@@ -74,6 +74,7 @@ const useAsync = (asyncFunction) => {
     isUpdate,
     currentPage,
     searchSku,
+    invoice,
     category,
     searchText,
     sortedField,
