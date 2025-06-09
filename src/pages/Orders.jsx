@@ -150,7 +150,7 @@ const Orders = () => {
                     ref={searchRef}
                     type="search"
                     name="search"
-                    placeholder="Search by Customer Name"
+                    placeholder="Name/Email/Phone"
                   />
                 </div>
                 <div>
