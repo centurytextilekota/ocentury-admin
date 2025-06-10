@@ -213,8 +213,6 @@ export const SidebarProvider = ({ children }) => {
         skuRef,
         searchSku,
         setSearchSku,
-        invoice,
-        setInvoice,
       }}
     >
       {children}
