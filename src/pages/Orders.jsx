@@ -167,15 +167,17 @@ const Orders = () => {
                     <option value="Status" defaultValue hidden>
                       {t("Status")}
                     </option>
-                    <option value="Delivered">{t("PageOrderDelivered")}</option>
-                    <option value="Pending">{t("PageOrderPending")}</option>
-                    <option value="Shipped">{"Shipped"}</option>
+
+                    <option value="Pending">Placed</option>
                     <option value="Processing">
                       {t("PageOrderProcessing")}
                     </option>
-                    <option value="Cancel">{t("OrderCancel")}</option>
-                    <option value="ReturnRequested">Return Reqested</option>
-                    <option value="Returned">Return Completed</option>
+                    <option value="Shipped">{"Shipped"}</option>
+
+                    <option value="Delivered">{t("PageOrderDelivered")}</option>
+                    <option value="Cancel">Cancelled</option>
+                    <option value="ReturnRequested">Return</option>
+                    <option value="Returned">Returned</option>
                     <option value="ReturnRejected">Return Rejected</option>
                     {/* <option value="OnReturn">On Return</option> */}
                     {/* <option value="ReturnCancelledByUser">

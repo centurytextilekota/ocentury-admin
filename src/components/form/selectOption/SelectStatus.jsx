@@ -28,11 +28,9 @@ const SelectStatus = ({ id, order }) => {
         <option value="status" defaultValue hidden>
           {order?.status}
         </option>
-        <option defaultValue={order?.status === "Delivered"} value="Delivered">
-          Delivered
-        </option>
+
         <option defaultValue={order?.status === "Pending"} value="Pending">
-          Pending
+          placed
         </option>
         <option
           defaultValue={order?.status === "Processing"}
@@ -40,33 +38,33 @@ const SelectStatus = ({ id, order }) => {
         >
           Processing
         </option>
-        <option
-          defaultValue={order?.status === "Shipped"}
-          value="Shipped"
-        >
+        <option defaultValue={order?.status === "Shipped"} value="Shipped">
           Shipped
         </option>
+        <option defaultValue={order?.status === "Delivered"} value="Delivered">
+          Delivered
+        </option>
         <option defaultValue={order?.status === "Cancel"} value="Cancel">
-          Cancel
+          Cancel Order
         </option>
 
         <option
           defaultValue={order?.status === "ReturnRequested"}
           value="ReturnRequested"
         >
-          Return Requested
+          Return
         </option>
         {/* <option defaultValue={order?.status === "OnReturn"} value="OnReturn">
             On Return
             </option> */}
         <option defaultValue={order?.status === "Returned"} value="Returned">
-          Return Completed
+          Returned
         </option>
         <option
           defaultValue={order?.status === "ReturnRejected"}
           value="ReturnRejected"
         >
-          Return Rejected
+          cancel Return
         </option>
 
         {/* <option

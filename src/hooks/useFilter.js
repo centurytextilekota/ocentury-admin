@@ -214,6 +214,7 @@ const useFilter = (data) => {
     //admin Filtering
     if (role) {
       services = services.filter((staff) => staff.role === role);
+      console.log()
     }
     //User and Admin filtering
     if (searchUser) {
