@@ -45,7 +45,7 @@ const SelectStatus = ({ id, order }) => {
           Delivered
         </option>
         <option defaultValue={order?.status === "Cancel"} value="Cancel">
-          Cancel Order
+          Cancel
         </option>
 
         <option
